@@ -19,3 +19,30 @@ exports.listMovies = async (collection) => {
     console.log(error);
   }
 };
+
+// //UPDATE (CRUD)
+exports.updateMovie = async (collection, dataObj) => {
+  try {
+    await collection.updateOne(
+      { id: dataObj.id },
+      {
+        $set: {
+          title: dataObj.title,
+          actor: dataObj.actor,
+          rating: dataObj.rating,
+        },
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//DELETE (CRUD)
+exports.deleteMovie = async (collection, dataObj) => {
+  try {
+    await collection.deleteOne(dataObj);
+  } catch (error) {
+    console.log(error);
+  }
+};

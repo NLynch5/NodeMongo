@@ -1,7 +1,6 @@
 //to set up connection to mongo
 
 //need to require the library that we are using (mongodb) - npm i mongodb
-const { builtinModules } = require("module");
 const { MongoClient } = require("mongodb");
 
 //then need to require dotenv which allows you to seperate secrets from your srouce code - npm i dotenv
