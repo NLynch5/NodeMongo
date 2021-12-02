@@ -20,16 +20,18 @@ exports.listMovies = async (collection) => {
   }
 };
 
-// //UPDATE (CRUD)
+//UPDATE (CRUD)
 exports.updateMovie = async (collection, dataObj) => {
   try {
     await collection.updateOne(
-      { id: dataObj.id },
+      { title: dataObj.title },
       {
         $set: {
           title: dataObj.title,
           actor: dataObj.actor,
           rating: dataObj.rating,
+          id: dataObj.id,
+          genre: dataObj.genre,
         },
       }
     );
@@ -37,6 +39,23 @@ exports.updateMovie = async (collection, dataObj) => {
     console.log(error);
   }
 };
+
+// exports.updateMovie = async (collection, dataObj) => {
+//   try {
+//     await collection.updateMany(
+//       { title: dataObj.title },
+//       {
+//         $set: {
+//           title: dataObj.title,
+//           actor: dataObj.actor,
+//           rating: dataObj.rating,
+//         },
+//       }
+//     );
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 //DELETE (CRUD)
 exports.deleteMovie = async (collection, dataObj) => {

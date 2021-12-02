@@ -12,6 +12,7 @@ const app = async () => {
       actor: process.argv[4],
       rating: process.argv[5],
       id: process.argv[6],
+      genre: process.argv[7],
     };
     await connection(addMovie, newMovie);
     console.log("Movie added");
@@ -24,6 +25,7 @@ const app = async () => {
       actor: process.argv[4],
       rating: process.argv[5],
       id: process.argv[6],
+      genre: process.argv[7],
     };
     await connection(updateMovie, movieUpdate);
   } else if (command === "delete") {
